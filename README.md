@@ -34,14 +34,14 @@ pkg install python-pip -y
 ### 2. Clone Repository (GitHub)
 ```bash
 # Apna GitHub repo URL yahan lagao
-git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git
-cd YOUR-REPO
+git clone https://github.com/mehakjutticpu/RDX-CLONE-.git
+cd RDX-CLONE-
 ```
 
 > **Example:** Agar repo ka naam `RDX-CLONE` hai to:
 > ```bash
-> git clone https://github.com/SARDAR-RDX/RDX-CLONE.git
-> cd RDX-CLONE
+> git clone https://github.com/mehakjutticpu/RDX-CLONE-.git
+> cd RDX-CLONE-
 > ```
 
 ### 3. Install Required Modules
@@ -75,7 +75,7 @@ python3 RDX.py
 
 Full setup + run ek hi baar me:
 ```bash
-pkg update -y && pkg install python git -y && git clone https://github.com/YOUR-USERNAME/YOUR-REPO.git && cd YOUR-REPO && pip install requests urllib3 mechanize rich beautifulsoup4 httpx && python RDX.py
+pkg update -y && pkg install python git -y && git clone https://github.com/mehakjutticpu/RDX-CLONE-.git && cd RDX-CLONE- && pip install requests urllib3 mechanize rich beautifulsoup4 httpx && python RDX.py
 ```
 
 ---
@@ -83,7 +83,7 @@ pkg update -y && pkg install python git -y && git clone https://github.com/YOUR-
 ## 📂 Files
 
 ```
-YOUR-REPO/
+RDX-CLONE-/
 ├── RDX.py          # Main Tool - SARDAR RDX Premium
 ├── README.md       # This File
 └── requirements.txt (optional)
