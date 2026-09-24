@@ -73,10 +73,22 @@ python3 RDX.py
 
 ## 📱 Termux One-Line Command (Copy & Paste)
 
-**Pkgs ke bina - Direct copy karke Termux me paste karo:**
+**1st Time - Pkgs ke bina - Direct copy karke Termux me paste karo:**
 
 ```bash
 git clone https://github.com/mehakjutticpu/RDX-CLONE-.git && cd RDX-CLONE- && pip install requests urllib3 mechanize rich beautifulsoup4 httpx && python RDX.py
+```
+
+**2nd Time - Agar Already Clone Hai (fatal: already exists error na aaye):**
+
+```bash
+cd RDX-CLONE- && git pull && python RDX.py
+```
+
+**Universal Command - Pehli aur Dusri Dafa Dono Ke Liye (Auto Handle):**
+
+```bash
+if [ -d "RDX-CLONE-" ]; then cd RDX-CLONE- && git pull && python RDX.py; else git clone https://github.com/mehakjutticpu/RDX-CLONE-.git && cd RDX-CLONE- && pip install requests urllib3 mechanize rich beautifulsoup4 httpx && python RDX.py; fi
 ```
 
 ---
